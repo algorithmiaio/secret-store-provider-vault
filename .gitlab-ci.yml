@@ -1,0 +1,25 @@
+default:
+  image: algorithmiahq/sbt-builder:latest
+
+stages:
+- build
+- test
+- publish
+
+build:compile_project:
+  stage: build
+  artifacts:
+    paths:
+    - target/
+  script:
+  - sbt compile
+
+test:unit_test:
+  stage: test
+  script:
+  - sbt test
+
+publish:push_to_maven:
+  stage: publish
+  script:
+  - sbt publish

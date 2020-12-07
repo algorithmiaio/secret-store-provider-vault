@@ -1,0 +1,24 @@
+## Ignore all dotfiles
+.*
+## except for .gitignore
+!.gitignore
+!.gitlab-ci.yml
+!.env
+
+## build artifacts
+out
+target
+
+## Junk
+hs_err_*.log
+replay_pid*.log
+RUNNING_PID
+*~
+\#*\#
+
+## Binaries
+*.class
+*.prefs
+*.iml
+
+
