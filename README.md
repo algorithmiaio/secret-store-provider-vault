@@ -29,3 +29,24 @@ To publish a semantically versioned release, please follow the documentation
 The following command can be used to publish to the local Ivy repository.
 
 `sbt publishLocal`
+
+## Testing
+
+### Integration Testing
+
+To do integration testing, first run:
+`./integration-setup.sh`
+
+This creates a mariadb with docker for the integration tests to run against.
+
+Then:
+`sbt compile test it:test`
+
+
+To remove the container:
+`./integration-teardown.sh`
+
+To inspect the data table:
+`integration-db-client.sh`
+
+
