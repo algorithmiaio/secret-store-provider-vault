@@ -5,8 +5,6 @@ organization := "com.algorithmia"
 
 description := "Algorithmia internal secret store module"
 
-javacOptions += "-Xlint:unchecked"
-javacOptions += "-Xlint:deprecation"
 
 val algorithmiaS3Maven = "s3://s3-us-west-2.amazonaws.com/algorithmia-maven/repo"
 
