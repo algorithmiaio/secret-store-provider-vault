@@ -14,13 +14,15 @@ public class InternalSecretProviderFactory implements SecretProviderFactory {
      */
     @Override
     public SecretProvider create(Map<String, String> config) {
-      // TODO - jgleason - add clear exceptions on missing required fields
-      // In the mean time, The EverythingTest.java shows what needs to be set in the config
+
+      require(config, "db_uri");
+      require(config, "db_username");
+      require(config, "db_password");
+      require(config, "secret_key");
       try
       {
         loadJDBCPool(config);
         setupTables();
-
 
         // This provider expects a database connection string that provides
         // access to a database where it can create/update its own table, as
@@ -32,6 +34,11 @@ public class InternalSecretProviderFactory implements SecretProviderFactory {
       {
         throw new RuntimeException(e);
       }
+    }
+
+    private void require(Map<String, String> config, String field)
+    {
+      if (!config.containsKey(field)) throw new RuntimeException("InternalSecretProviderFactory Missing required config field: " + field);
     }
 
     private void loadJDBCPool(Map<String, String> config) 
