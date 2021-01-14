@@ -22,7 +22,6 @@ public class InternalSecretProviderFactory implements SecretProviderFactory {
       try
       {
         loadJDBCPool(config);
-        setupTables();
 
         // This provider expects a database connection string that provides
         // access to a database where it can create/update its own table, as
@@ -51,28 +50,4 @@ public class InternalSecretProviderFactory implements SecretProviderFactory {
 
       DBUtil.openConnectionPool( InternalSecretProvider.SQL_POOL_NAME , driver, uri, username, password, 16, 4);
     }
-
-    private void setupTables()
-      throws java.sql.SQLException
-    {
-
-      // The colums are mostly self explanitory.
-      // the key_id is used just so when we get to the point where want to do rekey the datastore
-      // we can do so reasonably.
-      // The secret data is binary encrypted data.
-      try(Connection conn = DBUtil.openConnection( InternalSecretProvider.SQL_POOL_NAME ))
-      {
-        PreparedStatement ps = conn.prepareStatement(
-                        "CREATE TABLE IF NOT EXISTS internal_secret_provider_secrets (" +
-                        "  secret_id VARCHAR(64) UNIQUE NOT NULL," +
-                        "  version VARCHAR(64) NOT NULL," +
-                        "  secret_data BLOB  NOT NULL," +
-                        "  key_id VARCHAR(64) NOT NULL," +
-                        "  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, " +
-                        "  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
-                        "  PRIMARY KEY(secret_id))");
-        ps.execute();
-      }
-    }
-
 }
