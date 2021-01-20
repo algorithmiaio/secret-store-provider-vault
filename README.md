@@ -1,7 +1,7 @@
-secret-store-provider-internal
+secret-store-provider-vault
 ==============================
 
-This module is the internal secret provider implementation used by the
+This module is the example of a hashicorp vault based secret provider implementation used by the
 Algorithmia platform.
 
 ## Getting started
@@ -12,7 +12,7 @@ for the internal secret provider module, we will load it as a standard
 dependency at build time.
 
 ```sbt
-libraryDependencies += "com.algorithmia" % "secret-store-provider-internal" % "0.9.0"
+libraryDependencies += "com.algorithmia" % "secret-store-provider-vault" % "0.9.0"
 ```
 
 ## Publishing

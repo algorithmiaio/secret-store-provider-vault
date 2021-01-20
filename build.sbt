@@ -14,6 +14,7 @@ libraryDependencies += "commons-pool" % "commons-pool" % "1.6"
 libraryDependencies += "mysql" % "mysql-connector-java" % "8.0.22"
 libraryDependencies += "com.google.protobuf" % "protobuf-java" % "3.14.0";
 libraryDependencies += "commons-codec" % "commons-codec" % "1.15";
+libraryDependencies += "com.bettercloud" % "vault-java-driver" % "5.1.0";
 
 
 resolvers += "Algorithmia Maven" at algorithmiaS3Maven
