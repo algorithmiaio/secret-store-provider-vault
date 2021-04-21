@@ -1,6 +1,6 @@
 
-import com.algorithmia.plugin.sqlsecretprovider.BasicSecretIdentifier;
-import com.algorithmia.plugin.sqlsecretprovider.InternalSecretProviderFactory;
+import com.algorithmia.plugin.vault.BasicSecretIdentifier;
+import com.algorithmia.plugin.vault.VaultSecretProviderFactory;
 import com.algorithmia.sdk.plugin.secrets.Secret;
 import com.algorithmia.sdk.plugin.secrets.SecretIdentifier;
 import com.algorithmia.sdk.plugin.secrets.SecretProvider;
@@ -19,13 +19,11 @@ public class EverythingTest
   {
     TreeMap<String, String> config = new TreeMap<>();
 
-    config.put("db_uri","jdbc:mysql://localhost:7702/secret_it");
-    config.put("db_username","root");
-    config.put("db_password", "my-secret-pw");
+    config.put("vault_addr", "http://localhost:8200/");
+    config.put("vault_token", "root-token-integration");
+    config.put("vault_secret_path", "/secret/algorithmia");
 
-    config.put("secret_key","moonunit");
-
-    InternalSecretProviderFactory factory = new InternalSecretProviderFactory();
+    VaultSecretProviderFactory factory = new VaultSecretProviderFactory();
 
     provider = factory.create(config);
 
