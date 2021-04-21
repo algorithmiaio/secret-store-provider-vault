@@ -1,4 +1,4 @@
-package com.algorithmia.plugin.sqlsecretprovider;
+package com.algorithmia.plugin.vault;
 
 import com.algorithmia.sdk.plugin.secrets.SecretIdentifier;
 
