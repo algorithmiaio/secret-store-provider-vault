@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker container stop db.secret_provider.it
+docker container stop vault.secret_provider.it
 
 
 
