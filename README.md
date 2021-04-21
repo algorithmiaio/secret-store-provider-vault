@@ -37,7 +37,7 @@ The following command can be used to publish to the local Ivy repository.
 To do integration testing, first run:
 `./integration-setup.sh`
 
-This creates a mariadb with docker for the integration tests to run against.
+This creates a dev vault with docker for the integration tests to run against.
 
 Then:
 `sbt compile test it:test`
@@ -46,7 +46,11 @@ Then:
 To remove the container:
 `./integration-teardown.sh`
 
-To inspect the data table:
-`integration-db-client.sh`
+To inspect the vault table:
+`integration-vault-cli.sh`
+
+Example:
+`./integration-vault-cli.sh kv list /secret/algorithmia`
+
 
 

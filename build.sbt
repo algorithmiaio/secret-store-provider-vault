@@ -1,9 +1,9 @@
 
-name := "secret-store-provider-internal"
+name := "secret-store-provider-vault"
 
 organization := "com.algorithmia"
 
-description := "Algorithmia internal secret store module"
+description := "Algorithmia vault secret store module"
 
 
 val algorithmiaS3Maven = "s3://s3-us-west-2.amazonaws.com/algorithmia-maven/repo"
