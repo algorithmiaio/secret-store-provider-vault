@@ -8,7 +8,6 @@ import com.algorithmia.sdk.plugin.secrets.SimpleSecret;
 import com.bettercloud.vault.Vault;
 import com.bettercloud.vault.VaultException;
 import com.bettercloud.vault.response.LogicalResponse;
-import com.google.protobuf.ByteString;
 import java.time.Instant;
 import java.util.UUID;
 import java.util.Map;
