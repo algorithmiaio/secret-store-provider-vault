@@ -32,6 +32,9 @@ target/secret-store-provider-vault-assembly-<GIT_SHA>.jar
 
 This can be uploaded to the Algorithmia Admin console as a secret provider.
 
+Rather than building, files from the releases may be used:
+[Releases](https://github.com/algorithmiaio/secret-store-provider-vault/releases)
+
 ## Configuration
 
 This plugin requires the follow configuration settings:
