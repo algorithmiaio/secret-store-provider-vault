@@ -1,34 +1,31 @@
 secret-store-provider-vault
 ==============================
 
-This module is the example of a hashicorp vault based secret provider implementation used by the
+This module is the example of a Hashicorp Vault based secret provider implementation used by the
 Algorithmia platform.
+
+THIS PLUGIN IN UNSUPPORTED BY ALGORITHMIA AND INTENDED AS AN EXAMPLE ONLY
 
 ## Getting started
 
-Typically, secret provider modules should be added using the admin
-functionality for managing secret providers.  Because of special needs
-for the internal secret provider module, we will load it as a standard
-dependency at build time.
+Secret provider modules can be added using the admin functionality for managing secret providers. 
 
-```sbt
-libraryDependencies += "com.algorithmia" % "secret-store-provider-vault" % "0.9.0"
-```
+## Building
 
-## Publishing
+`sbt assembly`
 
-### Maven
-The following command can be used to publish a version based on SHA.
+This will produce a JAR file at:
+target/secret-store-provider-vault-assembly-<GIT_SHA>.jar
 
-`sbt publish`
+This can be uploaded to the Algorithmia Admin console as a secret provider.
 
-To publish a semantically versioned release, please follow the documentation
-[here](https://docs.google.com/document/d/12uYiHsXNH8yGbaHF00aUwlTrkIQMh8gdTy-pITLT144/edit#heading=h.ake9tfj07vvi).
+## Configuration
 
-### Local
-The following command can be used to publish to the local Ivy repository.
+This plugin requires the follow configuration settings:
 
-`sbt publishLocal`
+* vault_addr - URL to the Vault host or cluster
+* vault_token - Token that this plugin should use to access Vault
+* vault_secret_path - Path prefix that this plugin should use to store tokens in Vault
 
 ## Testing
 

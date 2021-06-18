@@ -5,10 +5,10 @@ organization := "com.algorithmia"
 
 description := "Algorithmia vault secret store module"
 
-
+// TODO - remove this once plugin-sdk published to public maven
 val algorithmiaS3Maven = "s3://s3-us-west-2.amazonaws.com/algorithmia-maven/repo"
 
-libraryDependencies += "com.algorithmia" % "plugin-sdk" % "4b49076258af71767f502f1849839b60879ef8f5"
+libraryDependencies += "com.algorithmia" % "plugin-sdk" % "6bd708784bbadb0922e612fa45e7a4fb89f716ba"
 libraryDependencies += "com.bettercloud" % "vault-java-driver" % "5.1.0";
 
 
