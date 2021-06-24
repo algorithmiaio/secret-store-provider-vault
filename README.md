@@ -1,14 +1,13 @@
 secret-store-provider-vault
 ==============================
 
-This module is the example of a Hashicorp Vault based secret provider implementation used by the
-Algorithmia platform.
+This module is the example of a Hashicorp Vault-based secret provider implementation used by the Algorithmia platform.
 
 This plugin is unsupported by Algorithmia and intended as an example only.
 
 ## Getting started
 
-This secret provider modules can be added using the [admin functionality for managing secret providers](https://training.algorithmia.com/exploring-the-admin-panel/842511).
+This secret provider module can be added using Algorithmia's [admin functionality for managing secret providers](https://training.algorithmia.com/exploring-the-admin-panel/842511).
 
 ## Requirements
 
