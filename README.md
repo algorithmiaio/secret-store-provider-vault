@@ -33,7 +33,7 @@ Rather than building, files from the [Releases](https://github.com/algorithmiaio
 
 ## Configuration
 
-This plugin requires the follow configuration settings:
+This plugin requires the following configuration settings:
 
 * `vault_addr` - URL to the Vault host or cluster
 * `vault_token` - Token that this plugin should use to access Vault
