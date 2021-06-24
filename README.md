@@ -27,7 +27,7 @@ To build, run:
 This will produce a JAR file at:
 `target/secret-store-provider-vault-assembly-<GIT_SHA>.jar`
 
-This can be [uploaded to Algorithmia as a secret provider](https://training.algorithmia.com/exploring-the-admin-panel/842511) in the admin UI.
+This JAR file can then be [uploaded to Algorithmia as a secret provider module](https://training.algorithmia.com/exploring-the-admin-panel/842511) in the admin UI.
 
 Rather than building, files from the releases may also be used:
 [Releases](https://github.com/algorithmiaio/secret-store-provider-vault/releases)
@@ -36,9 +36,9 @@ Rather than building, files from the releases may also be used:
 
 This plugin requires the follow configuration settings:
 
-* **vault_addr** - URL to the Vault host or cluster
-* **vault_token** - Token that this plugin should use to access Vault
-* **vault_secret_path** - Path prefix that this plugin should use to store tokens in Vault
+* `vault_addr` - URL to the Vault host or cluster
+* `vault_token` - Token that this plugin should use to access Vault
+* `vault_secret_path` - Path prefix that this plugin should use to store tokens in Vault
 
 ## How to contribute
 
